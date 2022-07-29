@@ -1,3 +1,9 @@
+/*
+* Curso de Node.js y Express.
+* Creado para freeCodeCamp en Español.
+* Por: Estefania Cassingena Navone. 
+*/
+
 // Objeto JavaScript.
 let infoCurso = {
   "titulo": "Aprende Node.js",
