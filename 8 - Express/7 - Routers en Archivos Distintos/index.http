@@ -1,0 +1,5 @@
+DELETE http://localhost:3000/api/cursos/programacion/3 HTTP/1.1
+Content-Type: application/json
+
+
+
