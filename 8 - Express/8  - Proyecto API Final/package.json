@@ -1,0 +1,14 @@
+{
+  "name": "servidor-express",
+  "version": "1.0.0",
+  "description": "Mi primer servidor creado con Node.js y Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "freeCodeCamp",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
