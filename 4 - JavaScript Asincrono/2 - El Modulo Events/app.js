@@ -4,37 +4,31 @@
 * Por: Estefania Cassingena Navone. 
 */
 
-// Por convencion se escribe en mayuscula porque
-// es una clase.
 const EventEmitter = require('events');
 
-// Creamos una instancia (objeto) emisor.
-const miEmisor = new EventEmitter();
-console.log(typeof miEmisor);
+const emisorProductos = new EventEmitter();
 
-// Creamos un evento personalizado. 
-// Cuando se emita un evento llamado 'inicio' se llama a esta función.
-//
-// NOTA: Todavia no estamos trabajando con servidores. 
-// Esta es solo una muestra de una funcion que maneja un evento
-// y muestra un mensaje. 
-miEmisor.on('inicio', () => {
-  console.log('Iniciando el servidor...');
+// Ejemplo 1 - Sin parametros.
+
+emisorProductos.on('compra', () => {
+  console.log('Se realizo una compra.');
 });
 
-// Emitir el evento.
-miEmisor.emit('inicio');
+emisorProductos.emit('compra');
 
-// Evento con un parametro.
-miEmisor.on('saludo', nombre => {
-  console.log(`Hola, ${nombre}`);
-})
+// Ejemplo 2 - Un parametro.
 
-miEmisor.emit('saludo', 'freeCodeCamp');
+emisorProductos.on('compra', (total) => {
+  console.log(`Se realizo una compra por $${total}.`); 
+});
 
-// Evento con dos parametros.
-miEmisor.on('saludo', (nombre, tema) => {
-  console.log(`Hola, ${nombre}. Hoy vas a aprender ${tema}.`);
-})
+emisorProductos.emit('compra', 500);
 
-miEmisor.emit('saludo', 'freeCodeCamp', 'Node.js');
+// Ejemplo 3 - Dos parametros.
+
+emisorProductos.on('compra', (total, numProductos) => {
+  console.log(`Total de la compra: $${total}`);
+  console.log(`Numero de productos: ${numProductos}`);  
+});
+
+emisorProductos.emit('compra', 500, 5);
